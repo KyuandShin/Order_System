@@ -1,7 +1,7 @@
 FROM php:8.3-apache
 
-# Enable MySQLi extension required for this project
-RUN docker-php-ext-install mysqli
+# Enable database extensions
+RUN docker-php-ext-install mysqli pdo pdo_mysql pdo_pgsql
 
 # Copy all application files
 COPY . /var/www/html/
